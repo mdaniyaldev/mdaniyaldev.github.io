@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Muhammad Daniyal | Software Engineer</title>
+    <meta name="description" content="Professional portfolio of Muhammad Daniyal, Software Engineer and Full Stack Developer in Karachi, Pakistan." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">MD</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav" class="site-nav">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="experience.html">Experience</a>
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="certifications.html">Certifications</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">Software Engineer | Full Stack Developer</p>
+            <h1>Building modern, scalable web applications with clean, maintainable code.</h1>
+            <p class="lead">I’m Muhammad Daniyal, a Karachi-based software engineer experienced in React.js, Node.js, Express.js, PostgreSQL, .NET MVC, REST APIs, CRM automation, and Azure deployments.</p>
+            <div class="cta-group">
+              <a class="btn btn-primary" href="projects.html">View Projects</a>
+              <a class="btn btn-secondary" href="contact.html">Contact Me</a>
+            </div>
+            <div class="hero-meta">
+              <span>Karachi, Pakistan</span>
+              <span>mdaniyal.tech@gmail.com</span>
+              <span>github.com/mdaniyaldev</span>
+            </div>
+          </div>
+          <div class="hero-card card">
+            <h2>What I do</h2>
+            <ul class="check-list">
+              <li>Full stack web development</li>
+              <li>REST API integration</li>
+              <li>CRM and workflow automation</li>
+              <li>Database design and optimization</li>
+              <li>Cloud deployment on Azure</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Featured Highlights</p>
+            <h2>Professional strengths</h2>
+          </div>
+          <div class="grid-3">
+            <article class="card">
+              <h3>Frontend Engineering</h3>
+              <p>Modern responsive interfaces using React.js, JavaScript, Tailwind CSS, HTML5, and CSS3.</p>
+            </article>
+            <article class="card">
+              <h3>Backend & APIs</h3>
+              <p>Secure backend services with Node.js, Express.js, .NET MVC, JWT authentication, and REST APIs.</p>
+            </article>
+            <article class="card">
+              <h3>Deployment & CRM</h3>
+              <p>Azure hosting, production maintenance, GoHighLevel CRM integration, and workflow automation.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section muted">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Selected Projects</p>
+            <h2>Projects that reflect my experience</h2>
+          </div>
+          <div class="grid-2">
+            <article class="card project-card">
+              <h3>University Complaint Management System</h3>
+              <p class="tags">React.js · Supabase · PostgreSQL · Tailwind CSS · shadcn/ui</p>
+              <p>A full-stack complaint management platform with role-based dashboards, secure authentication, complaint routing, notifications, and scalable database operations.</p>
+              <a href="projects.html">Read more</a>
+            </article>
+            <article class="card project-card">
+              <h3>Customer Portal Web Application</h3>
+              <p class="tags">React.js · Node.js · Express.js · PostgreSQL</p>
+              <p>A secure customer portal with login, protected routes, backend APIs, structured data handling, and a smooth user experience.</p>
+              <a href="projects.html">Read more</a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© 2026 Muhammad Daniyal</p>
+        <p><a href="mailto:mdaniyal.tech@gmail.com">mdaniyal.tech@gmail.com</a></p>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.site-nav');
+      toggle?.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+    </script>
+  </body>
+</html>
