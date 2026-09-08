@@ -30,7 +30,7 @@
     <main>
       <section class="hero section">
         <div class="container hero-grid">
-          <div>
+          <div class="hero-copy reveal">
             <p class="eyebrow">Software Engineer | Full Stack Developer</p>
             <h1>Building modern, scalable web applications with clean, maintainable code.</h1>
             <p class="lead">I’m Muhammad Daniyal, a Karachi-based software engineer experienced in React.js, Node.js, Express.js, PostgreSQL, .NET MVC, REST APIs, CRM automation, and Azure deployments.</p>
@@ -44,7 +44,9 @@
               <span>github.com/mdaniyaldev</span>
             </div>
           </div>
-          <div class="hero-card card">
+          <div class="hero-card card reveal delay-1">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
             <h2>What I do</h2>
             <ul class="check-list">
               <li>Full stack web development</li>
@@ -59,20 +61,20 @@
 
       <section class="section">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading reveal">
             <p class="eyebrow">Featured Highlights</p>
             <h2>Professional strengths</h2>
           </div>
           <div class="grid-3">
-            <article class="card">
+            <article class="card hover-rise reveal delay-1">
               <h3>Frontend Engineering</h3>
               <p>Modern responsive interfaces using React.js, JavaScript, Tailwind CSS, HTML5, and CSS3.</p>
             </article>
-            <article class="card">
+            <article class="card hover-rise reveal delay-2">
               <h3>Backend & APIs</h3>
               <p>Secure backend services with Node.js, Express.js, .NET MVC, JWT authentication, and REST APIs.</p>
             </article>
-            <article class="card">
+            <article class="card hover-rise reveal delay-3">
               <h3>Deployment & CRM</h3>
               <p>Azure hosting, production maintenance, GoHighLevel CRM integration, and workflow automation.</p>
             </article>
@@ -82,18 +84,18 @@
 
       <section class="section muted">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading reveal">
             <p class="eyebrow">Selected Projects</p>
             <h2>Projects that reflect my experience</h2>
           </div>
           <div class="grid-2">
-            <article class="card project-card">
+            <article class="card project-card hover-rise reveal delay-1">
               <h3>University Complaint Management System</h3>
               <p class="tags">React.js · Supabase · PostgreSQL · Tailwind CSS · shadcn/ui</p>
               <p>A full-stack complaint management platform with role-based dashboards, secure authentication, complaint routing, notifications, and scalable database operations.</p>
               <a href="projects.html">Read more</a>
             </article>
-            <article class="card project-card">
+            <article class="card project-card hover-rise reveal delay-2">
               <h3>Customer Portal Web Application</h3>
               <p class="tags">React.js · Node.js · Express.js · PostgreSQL</p>
               <p>A secure customer portal with login, protected routes, backend APIs, structured data handling, and a smooth user experience.</p>
@@ -118,6 +120,14 @@
         const open = nav.classList.toggle('open');
         toggle.setAttribute('aria-expanded', String(open));
       });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
     </script>
   </body>
 </html>
