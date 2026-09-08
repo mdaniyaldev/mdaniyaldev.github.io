@@ -7,14 +7,24 @@
     <meta name="description" content="Professional portfolio of Muhammad Daniyal, Software Engineer and Full Stack Developer in Karachi, Pakistan." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      (() => {
+        try {
+          const storedTheme = localStorage.getItem('theme');
+          const initialTheme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', initialTheme);
+        } catch (_) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="container nav-wrap">
         <a class="brand" href="index.html">MD</a>
-        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
         <nav id="site-nav" class="site-nav">
           <a href="index.html" class="active">Home</a>
           <a href="about.html">About</a>
@@ -24,6 +34,13 @@
           <a href="certifications.html">Certifications</a>
           <a href="contact.html">Contact</a>
         </nav>
+        <div class="nav-actions">
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+            <span data-theme-icon>🌙</span>
+            <span class="theme-toggle__text">Theme</span>
+          </button>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        </div>
       </div>
     </header>
 
@@ -33,10 +50,16 @@
           <div class="hero-copy reveal">
             <p class="eyebrow">Software Engineer | Full Stack Developer</p>
             <h1>Building modern, scalable web applications with clean, maintainable code.</h1>
+            <p class="typing-line">
+              <span class="typing-prefix">Role:</span>
+              <span class="typing-text" data-typing-target data-typing-items="Software Engineer, Full Stack Developer, React Developer, Next.js Developer"></span>
+              <span class="typing-cursor" aria-hidden="true">|</span>
+            </p>
             <p class="lead">I’m Muhammad Daniyal, a Karachi-based software engineer experienced in React.js, Node.js, Express.js, PostgreSQL, .NET MVC, REST APIs, CRM automation, and Azure deployments.</p>
             <div class="cta-group">
               <a class="btn btn-primary" href="projects.html">View Projects</a>
               <a class="btn btn-secondary" href="contact.html">Contact Me</a>
+              <a class="btn btn-secondary resume-download" href="#" data-resume-candidates="assets/resume.pdf, assets/Muhammad-Daniyal-Resume.pdf, resume.pdf">Download Resume</a>
             </div>
             <div class="hero-meta">
               <span>Karachi, Pakistan</span>
@@ -113,21 +136,6 @@
       </div>
     </footer>
 
-    <script>
-      const toggle = document.querySelector('.nav-toggle');
-      const nav = document.querySelector('.site-nav');
-      toggle?.addEventListener('click', () => {
-        const open = nav.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', String(open));
-      });
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add('visible');
-        });
-      }, { threshold: 0.12 });
-
-      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-    </script>
+    <script src="assets/js/site.js" defer></script>
   </body>
 </html>
