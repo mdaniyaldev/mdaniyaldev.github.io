@@ -116,11 +116,18 @@ const initResumeButtons = async () => {
   const resumeButtons = document.querySelectorAll('.resume-download');
   if (!resumeButtons.length) return;
 
+  const sanitizeResumeCandidate = (candidate) => {
+    if (!candidate || /[:?#]/.test(candidate) || candidate.startsWith('//')) return '';
+    if (!/^[./a-zA-Z0-9_-]+\.pdf$/.test(candidate)) return '';
+    return candidate;
+  };
+
   const allCandidates = new Set();
   resumeButtons.forEach((button) => {
     const candidates = (button.getAttribute('data-resume-candidates') || '')
       .split(',')
       .map((item) => item.trim())
+      .map(sanitizeResumeCandidate)
       .filter(Boolean);
     candidates.forEach((candidate) => allCandidates.add(candidate));
   });
