@@ -7,12 +7,24 @@
     <meta name="description" content="Work experience of Muhammad Daniyal." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      (() => {
+        try {
+          const storedTheme = localStorage.getItem('theme');
+          const initialTheme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', initialTheme);
+        } catch (_) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html">MD</a><nav class="site-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="experience.html" class="active">Experience</a><a href="projects.html">Projects</a><a href="skills.html">Skills</a><a href="certifications.html">Certifications</a><a href="contact.html">Contact</a></nav></div></header>
+    <header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html">MD</a><nav id="site-nav" class="site-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="experience.html" class="active">Experience</a><a href="projects.html">Projects</a><a href="skills.html">Skills</a><a href="certifications.html">Certifications</a><a href="contact.html">Contact</a></nav><div class="nav-actions"><button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme"><span data-theme-icon>🌙</span><span class="theme-toggle__text">Theme</span></button><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button></div></div></header>
     <main class="section"><div class="container narrow"><div class="section-heading"><p class="eyebrow">Experience</p><h1>Professional work history</h1></div><div class="timeline"><article class="card timeline-item"><h2>CityFM89 (Dawn Media)</h2><p class="meta">Software Engineer / Full Stack Developer · July 2025 – Present · Karachi, Pakistan</p><ul><li>Develop and maintain React.js web applications and internal solutions.</li><li>Integrate and consume REST APIs.</li><li>Maintain and enhance company websites.</li><li>Optimize frontend components for responsiveness and usability.</li><li>Support testing, debugging, deployment, and maintenance.</li></ul></article><article class="card timeline-item"><h2>AiTek Solutions</h2><p class="meta">Full Stack Developer · Nov 2024 – July 2025</p><ul><li>Built responsive websites using HTML, CSS, JavaScript, and modern frontend practices.</li><li>Developed a customer portal with React.js, Node.js, Express.js, and PostgreSQL.</li><li>Implemented JWT authentication and protected routes.</li><li>Integrated GoHighLevel CRM for automation and lead management.</li><li>Deployed and managed applications on Microsoft Azure.</li></ul></article></div></div></main>
     <footer class="site-footer"><div class="container footer-wrap"><p>© 2026 Muhammad Daniyal</p></div></footer>
+    <script src="assets/js/site.js" defer></script>
   </body>
 </html>

@@ -7,12 +7,24 @@
     <meta name="description" content="Skills and tools used by Muhammad Daniyal." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      (() => {
+        try {
+          const storedTheme = localStorage.getItem('theme');
+          const initialTheme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', initialTheme);
+        } catch (_) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html">MD</a><nav class="site-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="experience.html">Experience</a><a href="projects.html">Projects</a><a href="skills.html" class="active">Skills</a><a href="certifications.html">Certifications</a><a href="contact.html">Contact</a></nav></div></header>
-    <main class="section"><div class="container"><div class="section-heading"><p class="eyebrow">Skills</p><h1>Technical skills and tools</h1></div><div class="grid-2 skill-grid"><article class="card"><h2>Frontend</h2><p>React.js, Tailwind CSS, HTML5, CSS3, JavaScript, Responsive Web Design</p></article><article class="card"><h2>Backend</h2><p>Node.js, Express.js, .NET MVC, REST APIs, Authentication, JWT</p></article><article class="card"><h2>Databases</h2><p>PostgreSQL, Supabase, MongoDB, SQL Server</p></article><article class="card"><h2>Cloud & Deployment</h2><p>Microsoft Azure, Web Hosting, Application Deployment</p></article><article class="card"><h2>CRM & Automation</h2><p>GoHighLevel CRM, Lead Management, Workflow Automation</p></article><article class="card"><h2>Tools & AI</h2><p>Git, GitHub, Visual Studio, VS Code, Postman, Cursor IDE, ChatGPT, GitHub Copilot, Claude</p></article></div></div></main>
+    <header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html">MD</a><nav id="site-nav" class="site-nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="experience.html">Experience</a><a href="projects.html">Projects</a><a href="skills.html" class="active">Skills</a><a href="certifications.html">Certifications</a><a href="contact.html">Contact</a></nav><div class="nav-actions"><button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme"><span data-theme-icon>🌙</span><span class="theme-toggle__text">Theme</span></button><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button></div></div></header>
+    <main class="section"><div class="container"><div class="section-heading"><p class="eyebrow">Skills</p><h1>Technical skills and tools</h1></div><div class="grid-2 skill-grid"><article class="card"><h2>Frontend</h2><p class="skill-list"><span class="skill-badge">React.js</span><span class="skill-badge">Tailwind CSS</span><span class="skill-badge">HTML5</span><span class="skill-badge">CSS3</span><span class="skill-badge">JavaScript</span><span class="skill-badge">Responsive Web Design</span></p></article><article class="card"><h2>Backend</h2><p class="skill-list"><span class="skill-badge">Node.js</span><span class="skill-badge">Express.js</span><span class="skill-badge">.NET MVC</span><span class="skill-badge">REST APIs</span><span class="skill-badge">Authentication</span><span class="skill-badge">JWT</span></p></article><article class="card"><h2>Databases</h2><p class="skill-list"><span class="skill-badge">PostgreSQL</span><span class="skill-badge">Supabase</span><span class="skill-badge">MongoDB</span><span class="skill-badge">SQL Server</span></p></article><article class="card"><h2>Cloud & Deployment</h2><p class="skill-list"><span class="skill-badge">Microsoft Azure</span><span class="skill-badge">Web Hosting</span><span class="skill-badge">Application Deployment</span></p></article><article class="card"><h2>CRM & Automation</h2><p class="skill-list"><span class="skill-badge">GoHighLevel CRM</span><span class="skill-badge">Lead Management</span><span class="skill-badge">Workflow Automation</span></p></article><article class="card"><h2>Tools & AI</h2><p class="skill-list"><span class="skill-badge">Git</span><span class="skill-badge">GitHub</span><span class="skill-badge">Visual Studio</span><span class="skill-badge">VS Code</span><span class="skill-badge">Postman</span><span class="skill-badge">Cursor IDE</span><span class="skill-badge">ChatGPT</span><span class="skill-badge">GitHub Copilot</span><span class="skill-badge">Claude</span></p></article></div></div></main>
     <footer class="site-footer"><div class="container footer-wrap"><p>© 2026 Muhammad Daniyal</p></div></footer>
+    <script src="assets/js/site.js" defer></script>
   </body>
 </html>
